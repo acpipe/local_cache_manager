@@ -18,6 +18,7 @@ target
 #diff file
 diff*
 *.diff
+*.log
 
 .classpath
 .project

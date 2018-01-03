@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout charset="UTF-8" pattern="[%-5p] %d %c - %m%n" />
+        </Console>
+        <RollingFile name="DailyRollingFile"
+                     fileName="local_cache_manager.log"
+                     filePattern ="local_cache_manager.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%-5p %d{yyyy-MM-dd HH:mm:ss.SSS}] [%t] %l [%m]%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile >
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.xiaomi" level="${log4j_level}" />
+        <Logger name="org.springframework" level="debug" />
+
+        <root level="debug">
+            <AppenderRef ref="DailyRollingFile" />
+        </root>
+    </Loggers>
+</configuration>
