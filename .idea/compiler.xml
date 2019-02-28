@@ -12,7 +12,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="gs-spring-boot" target="1.8" />
-      <module name="miui_ad_explorer_service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
